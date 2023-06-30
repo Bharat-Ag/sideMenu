@@ -184,6 +184,21 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="script.js"></script>
+    <script>
+      let nav_links = document.querySelectorAll(".nav_links");
+      let box = document.querySelectorAll(".box");
+
+      nav_links.forEach((link, index) => {
+        link.addEventListener("click", () => {
+          nav_links.forEach((item) => item.classList.remove("active"));
+
+          link.classList.add("active");
+          box.forEach((ele) => {
+            ele.classList.remove("active");
+          });
+          box[index].classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>
